@@ -95,7 +95,7 @@ if __name__=="__main__":
     # mean: 0.518402138245449    0.5101072355830509    0.5418920548041813
     # std: 0.21845120412545 0.21620868937206825 0.2241930401942555
     train_ds=PIPELINE_Dataset(height,width,B_mean_train,G_mean_train,R_mean_train,B_std_train,G_std_train,R_std_train,train_image_paths,train_labels)
-    train_dl=DataLoader(train_ds,batch_size=16,shuffle=True,drop_last=True)
+    train_dl=DataLoader(train_ds,batch_size=64,shuffle=True,drop_last=True)
     for train_batch in train_dl:
         inputs_train=train_batch['image'].cuda()
         labels_train=train_batch['label'].cuda()
@@ -104,7 +104,7 @@ if __name__=="__main__":
     # mean:     0.5165745826647972        0.5084738184718389        0.5393147205081874
     # std:     0.22355709795402462 0.22102832417268378 0.22993736454244862
     test_ds=PIPELINE_Dataset(height,width,B_mean_test,G_mean_test,R_mean_test,B_std_test,G_std_test,R_std_test,test_image_paths,test_labels)
-    test_dl=DataLoader(test_ds,batch_size=16,shuffle=True,drop_last=True)
+    test_dl=DataLoader(test_ds,batch_size=64,shuffle=True,drop_last=True)
     for test_batch in test_dl:
         inputs_test=test_batch['image'].cuda()
         labels_test=test_batch['label'].cuda()

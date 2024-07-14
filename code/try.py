@@ -58,13 +58,21 @@ from sklearn.metrics import accuracy_score,precision_score,recall_score,f1_score
 # print(precision_macro,precision_micro,precision_weighted)
 # print(recall_macro,recall_micro,recall_weighted)
 # print(f1_macro,f1_micro,f1_weighted)
+#
+# a=[0]
+# print(a)
+# for i in range(10):
+#     a.append(i)
+#     print(a)
+xx=torch.tensor([1,2,3,4,5,6,7,8,9,0])
+# print(xx)
+yy=torch.tensor([11,12,13,14,15,16,17,18,19,20])
+# print(yy)
 
-a=[0]
-print(a)
-for i in range(10):
-    a.append(i)
-    print(a)
-
-
+print(xx.view(-1,10))
+# zz=xx.add(yy)
+# print(zz)
+#
+# x=x.view(-1,4)
 
 
